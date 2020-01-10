@@ -6,4 +6,9 @@ class Project
         @id = attributes.fetch(:id)
     end
 
+    def save
+        result = DB.exec("INSERT INTO cities (title) VALUES ('#{@title}') RETURNING id;")
+        @id = result.first().fetch("id").to_i
+    end
+
 end
