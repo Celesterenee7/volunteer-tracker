@@ -1,0 +1,15 @@
+* {}
+
+
+.basic-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2D4D02;
+}
+
+.container {
+    padding-top: 100px;
+    text-align: center;
+    padding-right: 100px !important;
+    padding-left: 100px !important;
+}

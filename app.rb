@@ -10,31 +10,30 @@ also_reload('lib/**/*.rb')
 DB = PG.connect({:dbname => "volunteer_tracker"})
 
 get('/') do
-  @projects = Project.all
-  @volunteers = Volunteer.all
-  erb(:projects)
+  erb(:home)
 end
 
 # Project routes below
 
 get('/projects') do
   @projects = Project.all
-  erb(:projects)
-end
-
-get('/projects/new') do
-  erb(:new_project)
+  erb(:show_projects)
 end
 
 post('/projects') do
   title = params[:title]
-  id = params[:id]
-  project = Project.new({:title => title, :id => id})
+  project = Project.new({:title => title, :id => nil})
   project.save()
-  redirect to ('/projects')
+  @projects = Project.all
+  erb(:show_projects)
 end
 
-get('/projects/:id') do
+get('/projects/:id/edit') do
   @project = Project.find(params[:id].to_i())
-  erb(:project)
+  erb(:edit_project)
+end
+
+get('/projects/:id/add') do
+    @project = Project.find(params[:id])
+    erb(:new_volunteer)
 end
