@@ -29,6 +29,17 @@ describe Project do
     end
   end
 
+  describe('.clear') do
+    it("clears all projects") do
+      project = Project.new({:title => 'Teaching Meika to Code', :id => nil})
+      project.save()
+      project2 = Project.new({:title => 'Teaching Meika to Code', :id => nil})
+      project2.save()
+      Project.clear()
+      expect(Project.all).to(eq([]))
+    end
+  end
+
   context '.all' do
     it 'is empty to start' do
       expect(Project.all).to eq []
