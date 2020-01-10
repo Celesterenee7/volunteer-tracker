@@ -24,13 +24,13 @@ class Volunteer
     #     @id = result.first().fetch("id").to_i
     # end
 
-    # def ==(volunteer_to_compare)
-    #     if volunteer_to_compare != nil
-    #       (self.name() == volunteer_to_compare.name()) && (self.project_id() == volunteer_to_compare.project_id())
-    #     else
-    #       false
-    #     end
-    #   end
+    def ==(volunteer_to_compare)
+        if volunteer_to_compare != nil
+          (self.name() == volunteer_to_compare.name()) && (self.project_id() == volunteer_to_compare.project_id())
+        else
+          false
+        end
+      end
 
     def self.find(id)
         volunteer = DB.exec("SELECT * FROM volunteers WHERE id = #{id};").first
