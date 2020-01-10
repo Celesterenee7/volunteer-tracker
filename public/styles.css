@@ -1,5 +1,19 @@
-* {}
+a {
+    font-size: 18px;
+    color: #2D4D02;
+    text-decoration: none !important;
+    font-style: italic;
+    font-weight: 500;
+}
 
+a:hover {
+    color: #69AC0A !important;
+}
+
+label {
+    font-size: 20px;
+    font-weight: 500;
+}
 
 .basic-text {
     font-size: 18px;
@@ -12,4 +26,31 @@
     text-align: center;
     padding-right: 100px !important;
     padding-left: 100px !important;
+}
+
+.delete-button {
+    padding: 12px 45px !important;
+    background-color: #DB050E;
+    text-decoration: none !important;
+    color: white !important;
+    letter-spacing: 0.1em;
+    font-size: 17px;
+}
+
+.main-button {
+    padding: 12px 45px !important;
+    background-color: #69AC0A;
+    text-decoration: none !important;
+    color: white !important;
+    letter-spacing: 0.1em;
+    font-size: 17px;
+}
+
+.main-button:hover {
+    color: white !important;
+    background-color: #2D4D02 !important;
+}
+
+.title {
+    font-size: 35px;
 }

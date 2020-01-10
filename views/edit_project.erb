@@ -1,0 +1,19 @@
+  
+<h1>Update <%= @project.title %></h1>
+<br>
+<form action="/projects/<%= @project.id() %>" method="post">
+  <input name="_method" type="hidden" value="update">
+  <label for="title">Rename project</label>
+  <input name="title" type="text">
+  <br>
+  <button class="main-button" type="submit">Save</button>
+</form>
+
+<br>
+<p><a href="/projects">Return to project list....</a></p>
+<h3>OR</h3>
+
+<form action="/projects/<%= @project.id %>/edit" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button type="submit" class="delete-button">Delete project</button>
+</form>
