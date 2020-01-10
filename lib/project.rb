@@ -26,6 +26,10 @@ class Project
           self.title() == project_to_compare.title()
     end
 
+    def self.clear
+        DB.exec("DELETE FROM projects *;")
+    end
+
     def self.find(id)
         project = DB.exec("SELECT * FROM projects WHERE id = #{id};").first
         title = project.fetch("title")
@@ -38,11 +42,11 @@ class Project
         volunteers = DB.exec("SELECT * FROM volunteers WHERE project_id = #{id};")
         volunteers.each() do |volunteer|
         name = volunteer.fetch("name")
-        project_id = volunteer.fetch("project_id").to_i()
+        project_id = volunteer.fetch("project_id")
         id = volunteer.fetch("id")
         results.push(Volunteer.new({:name => name, :id => id, :project_id => project_id}))
-     end
-        volunteers
+    end
+        results
     end
     
 
