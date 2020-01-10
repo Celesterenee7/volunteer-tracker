@@ -23,6 +23,17 @@ describe Volunteer do
     end
   end
 
+  describe('.clear') do
+    it("clears all volunteers") do
+      volunteer = Volunteer.new({:name => "Meika", :project_id => 1, :id =>nil})
+      volunteer.save()
+      volunteer2 = Volunteer.new({:name =>"Fay", :project_id => 2, :id => nil})
+      volunteer2.save()
+      Volunteer.clear()
+      expect(Volunteer.all).to(eq([]))
+    end
+  end
+
   context '.all' do
     it 'is empty to start' do
       expect(Volunteer.all).to eq []

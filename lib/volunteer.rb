@@ -32,6 +32,10 @@ class Volunteer
       end
     end
 
+    def self.clear
+        DB.exec("DELETE FROM volunteers *;")
+    end
+
     def self.find(id)
         volunteer = DB.exec("SELECT * FROM volunteers WHERE id = #{id};").first
         if volunteer
