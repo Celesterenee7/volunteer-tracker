@@ -1,5 +1,5 @@
 # Volunteer Tracker - Independent Project
-#### Routing with Ruby for Epicodus, 1/10/20
+#### Ruby Database Basics for Epicodus, 1/10/20
 #### By Celeste Renee Morton
 ## Description:
 The concept for this project is to build an internal website for a non profit IT manager that would like to track volunteers working on projects using SQL for database queries. Each project should have many volunteers, but a volunteer can only work on one project at a time (a one-to-many relationship). 
