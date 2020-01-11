@@ -1,6 +1,6 @@
 a {
     font-size: 18px;
-    color: #2D4D02;
+    color: #020565;
     text-decoration: none !important;
     font-style: italic;
     font-weight: 500;
@@ -18,7 +18,7 @@ label {
 .basic-text {
     font-size: 18px;
     font-weight: 600;
-    color: #2D4D02;
+    color: #020565;
 }
 
 .container {
@@ -47,15 +47,16 @@ label {
 
 .main-button:hover {
     color: white !important;
-    background-color: #2D4D02 !important;
+    background-color: #020565 !important;
 }
 
 .project-name {
     font-size: 25px;
     font-weight: 600;
-    color: #2D4D02;
+    color: #020565;
 }
 
 .title {
     font-size: 35px;
+    color: #020565;
 }

@@ -8,10 +8,6 @@ The concept for this project is to build an internal website for a non profit IT
 
 |Spec|Input|Output|
 |-|-|-|
-|-|-|-|
-|-|-|-|
-|-|-|-|
-
 
 ## Setup/Installation Requirements
 * Clone this repository
