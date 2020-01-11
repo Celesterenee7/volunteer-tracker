@@ -1,19 +1,23 @@
 <h3 class="title">Projects</h3>
-
+<hr>
   <% @projects.each do |project| %>
     <div class="row">
     <div class="edit-project">
-    <p class"""><%= project.title %></p>
-    <a href="/projects/<%= project.id  %>/edit">Edit</a>
-  
+    <a class="project-name"><%= project.title %></a>
+    <br>
+    <br>
+    <a href="/projects/<%= project.id  %>/edit">Edit Project</a>
   </div>
-  <p>Volunteers Associated With Project</p>
+  <br>
+  <em>Volunteers Associated With Project</em>
   <% volunteers = project.volunteers %>
   <% if volunteers.any? %>
   <% volunteers.each do |volunteer| %>
     <a class="volunteer_link" href="/volunteers/<%= volunteer.id %>"><%= volunteer.name %></a>
   <% end %>
 <% else %>
+<br>
+<br>
 <p>There are currently no volunteers to display.</p>
 <% end %>
 <% end %>

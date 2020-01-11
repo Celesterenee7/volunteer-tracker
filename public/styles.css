@@ -23,7 +23,6 @@ label {
 
 .container {
     padding-top: 100px;
-    text-align: center;
     padding-right: 100px !important;
     padding-left: 100px !important;
 }
@@ -49,6 +48,12 @@ label {
 .main-button:hover {
     color: white !important;
     background-color: #2D4D02 !important;
+}
+
+.project-name {
+    font-size: 25px;
+    font-weight: 600;
+    color: #2D4D02;
 }
 
 .title {
