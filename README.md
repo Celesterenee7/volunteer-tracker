@@ -8,6 +8,11 @@ The concept for this project is to build an internal website for a non profit IT
 
 |Spec|Input|Output|
 |-|-|-|
+|A user should be able to add a new project to the site from the home page|Type in project name and hit create project|Project is now listed on the home page|
+|A user should be able to click on a project to see volunteers|Click on project name|All associated volunteers should be listed|
+|A user should be able to add a new volunteer to a project|Click "Want to add new volunteer" and add volunteer name|New volunteer is now associated with project|
+|A user should be able to update the volunteers name|Click on project, then click on the volunteers name. Click update volunteer|Volunteer changes are now relfected on the site|
+|A user should be able to update or delete an existing project|Click on project name, click edit project, click update or delete project buttons|Project changes are now reflected on the site|
 
 ## Setup/Installation Requirements
 * Clone this repository
@@ -18,7 +23,10 @@ Please contact me directly with any questions or concerns. You can reach me at 5
 ## Technologies Used
 _This program utilized:_
 * _RUBY_
+* _SQL Postrgres (12.1)_
 * _SINATRA_
-_and was built in Visiual Studio Code_
-### Copyright (c) 2019 Celeste Renee Morton
+* _HTML_
+* _CSS_
+* _Built in Visiual Studio Code_
+### Copyright (c) 2020 Celeste Renee Morton
 This software is installed under MIT license.
