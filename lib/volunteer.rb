@@ -10,19 +10,19 @@ class Volunteer
     def self.all
         returned_volunteers = DB.exec("SELECT * FROM volunteers;")
         volunteers = []
-        returned_volunteers.each() do |volunteer|
-        name = volunteer.fetch("name")
-        id = volunteer.fetch("id").to_i
-        project_id = volunteer.fetch("project_id").to_i
-        volunteers.push(Volunteer.new({:name => name, :id => id, :project_id => project_id}))
-      end
+        returned_volunteers.each do |volunteer|
+          name = volunteer.fetch("name")
+          id = volunteer.fetch("id").to_i
+          project_id = volunteer.fetch("project_id").to_i
+          volunteers.push(Volunteer.new({:name => name, :id => id, :project_id => project_id}))
+        end
         volunteers
-    end
+      end
 
-    def save
-        result = DB.exec("INSERT INTO volunteers (name, project_id) VALUES ('#{@name}', #{@project_id} ) RETURNING id;")
+      def save
+        result = DB.exec("INSERT INTO volunteers (name, project_id) VALUES ('#{@name}', #{@project_id}) RETURNING id;")
         @id = result.first().fetch("id").to_i
-    end
+      end
 
     def ==(volunteer_to_compare)
         if volunteer_to_compare != nil
@@ -50,10 +50,8 @@ class Volunteer
 
     def update(attributes)
         @name = attributes.fetch(:name)
-        @project_id = attributes.fetch(:project_id)
-        DB.exec("UPDATE volunteers SET name = '#{@name}' WHERE id = #{@id};")
-        DB.exec("UPDATE volunteers SET project_id = '#{@project_id}' WHERE id = #{@id};")
-    end
+        DB.exec("UPDATE volunteers SET name = '#{@name}' WHERE id = #{@id}")
+      end
 
     def delete
         DB.exec("DELETE FROM volunteers WHERE id = #{@id};")
