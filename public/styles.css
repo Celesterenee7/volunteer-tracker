@@ -1,3 +1,8 @@
+* {
+    font-family: 'Cabin', sans-serif;
+}
+
+
 a {
     font-size: 18px;
     color: #010C5B;
@@ -7,12 +12,13 @@ a {
 }
 
 a:hover {
-    color: #69AC0A !important;
+    color: #03B386 !important;
 }
 
 label {
     font-size: 20px;
     font-weight: 500;
+    color: #010C5B;
 }
 
 .basic-text {
@@ -22,7 +28,7 @@ label {
 }
 
 .container {
-    padding-top: 100px;
+    padding-top: 80px;
     padding-right: 100px !important;
     padding-left: 100px !important;
 }
@@ -55,6 +61,20 @@ label {
 .main-button:hover {
     color: white !important;
     background-color: #03B386 !important;
+}
+
+.nav-bar-top {
+    min-width: 100%;
+    background-color: #02654F;
+    height: 85px;
+}
+
+.nav-bar-title {
+    color: white;
+    font-size: 28px;
+    float: right;
+    padding-right: 50px;
+    padding-top: 20px;
 }
 
 /* .project-name {
