@@ -10,6 +10,7 @@ also_reload('lib/**/*.rb')
 DB = PG.connect({:dbname => "volunteer_tracker"})
 
 get('/') do
+  
   erb(:home)
 end
 

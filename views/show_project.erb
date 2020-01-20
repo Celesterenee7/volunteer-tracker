@@ -1,0 +1,24 @@
+<h2 class="title">Project: <%= @project.title %></h2>
+<hr>
+<h2 class="second-title">Volunteers Associated With Project</h2>
+<br>
+<% volunteers = @project.volunteers %>
+<% if volunteers.any? %>
+<ul>
+  <% volunteers.each do |volunteer| %>
+  <li>
+    <a class="volunteers" href="/volunteers/<%= volunteer.id %>/edit"><%= volunteer.name %></a>
+    <br>
+  </li>
+  <% end %>
+</ul>
+<% else %>
+<p><em>There are currently no volunteers to display<em></p>
+<br>
+<a href="/projects/<%= @project.id %>/add"><strong>Want to add a volunteer?</strong></a>
+<% end %>
+<br>
+<br>
+<a href="/projects/<%= @project.id %>/edit">Edit Project</a><br>
+<br>
+<a href="/">Return to main page</a>
