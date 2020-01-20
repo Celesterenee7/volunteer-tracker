@@ -1,18 +1,25 @@
 <h1 class="title">Volunteer Tracker</h1>
 <hr>
-<a href="/projects">Want to view all projects?</a>
-<p>OR</p>
 
-<a href="/volunteers">Want to view all volunteers?</a>
-<br>
-<form action="/projects" method="post">
-  <div class="form-group">
-  <h2 class="basic-text">Add a New Project Below</h2>
+<form action="/" method="post">
+  <h2 for="title" class="basic-text">Add a New Project Below</h2>
     <input name="title" class="form-control" type="text">
     <br>
-  </div>
   <button type="submit" class="main-button">Create Project!</button>
 </form>
 <br>
+
+<h1 class="title">Current Projects Listed</h1>
+<hr>
+<ul>
+  <% @projects.each do |project| %>
+  <li>
+    <a href="/projects/<%= project.id  %>"><em><%= project.title %></em></a>
+    <br>
+    <% end %>
+  </li>
+</ul>
+
+
 
 
