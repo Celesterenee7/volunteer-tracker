@@ -1,0 +1,13 @@
+<h1 class="title">Add New Volunteer to:</h1>
+<hr>
+<h3 class="second-title"><em><%= @project.title %></em></h3>
+<br>
+<form action="/projects/<%= @project.id %>/edit" method="post">
+  <label for="name">Name of Volunteer</label>
+  <input type="text" name="name" class="form-control">
+  <br>
+  <button class="main-button" type="submit" name="button">Add Volunteer!</button>
+</form>
+<br>
+
+<a href="/projects/<%= @project.id %>/edit">Go Back</a>

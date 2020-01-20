@@ -1,20 +1,35 @@
-  
-<h1>Update <%= @project.title %></h1>
-<br>
-<form action="/projects" method="post">
-  <input name="_method" type="hidden" value="update">
-  <label for="title">Rename project</label>
-  <input name="title" type="text">
+<h2 class="title">Update: <%= @project.title %></h2>
+
+<form action="/projects/<%= @project.id %>/edit" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <label for="title">Rename Project:</label>
+  <input type="text" name="title">
   <br>
   <br>
   <button class="main-button" type="submit">Update Project</button>
 </form>
-
 <br>
-<p><a href="/projects">Return to project list....</a></p>
-<h3>OR</h3>
+<% volunteers = @project.volunteers %>
+<% if volunteers.any? %>
+<ul>
+<% volunteers.each do |volunteer| %>
+  <li>
+  <a href="/volunteers/<%= volunteer.id %>/edit"><%= volunteer.name %></a>
+  <br>
+  </li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are currently no volunteers to display</p>
+<% end %>
+<a href="/projects/<%= @project.id  %>/add"><strong>Want to add a volunteer?</strong></a>
+<br>
+<br>
 
+<a href="/projects/<%= @project.id %>"><em>Return to Project List</em></a>
+<h3>or...</h3>
+<br>
 <form action="/projects/<%= @project.id %>/edit" method="post">
   <input name="_method" type="hidden" value="delete">
-  <button type="submit" class="delete-button">Delete Project</button>
+  <button type="submit" class="delete-button" name="button">Delete Project</button>
 </form>
